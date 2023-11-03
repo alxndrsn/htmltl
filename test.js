@@ -59,7 +59,7 @@ describe('html``', () => {
               if(line === '```js') inJs = true;
               return false;
             }
-          }
+          };
         })())
         .map(line => line.replace('console.log', 'return '))
         .join('\n');
