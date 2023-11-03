@@ -77,9 +77,7 @@ describe('html``', () => {
     <h2>HTML Template Literals</h2>
     <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">Template Strings</a> for HTML</p>
     <h3>Example</h3>
-    <code><pre>
-  return (html\`&lt;p&gt;hi&lt;/p&gt;\`);
-</pre></code>
+    <code><pre>&lt;p&gt;hi&lt;/p&gt;</pre></code>
   </div>
 </body>
   </html>

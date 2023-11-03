@@ -8,11 +8,6 @@ Tagged template literals for HTML in Javascript.
 ```js
 const { html } = require('htmltl');
 
-const exampleCode = `
-  const { html } = require('htmltl');
-  console.log(html\`<p>hi</p>\`);
-`;
-
 const fontSize = 1000;
 
 const head = html`
@@ -26,12 +21,12 @@ const body = html`
     <h2>HTML Template Literals</h2>
     <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">Template Strings</a> for HTML</p>
     <h3>Example</h3>
-    ${syntaxHilighted(exampleCode)}
+    ${syntaxHilighted(html`<p>hi</p>`)}
   </div>
 `;
 
 function syntaxHilighted(code) {
-  return html`<code><pre>${code}</pre></code>`;
+  return html`<code><pre>${code.toString()}</pre></code>`;
 }
 
 console.log(html`
