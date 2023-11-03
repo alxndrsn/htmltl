@@ -1,0 +1,20 @@
+{
+  "name": "htmltl",
+  "version": "1.0.0",
+  "packageManager": "yarn@3.5.0",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint .",
+    "test:mocha": "mocha test.js",
+    "test": "yarn lint && yarn test:mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alxndrsn/htmltl"
+  },
+  "devDependencies": {
+    "chai": "^4.3.10",
+    "eslint": "^8.52.0",
+    "mocha": "^10.2.0"
+  }
+}
