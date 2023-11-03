@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "packageManager": "yarn@3.5.0",
   "license": "MIT",
+  "main": "index.js",
   "scripts": {
     "lint": "eslint .",
     "test:mocha": "mocha test.js",
