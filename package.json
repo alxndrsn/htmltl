@@ -1,7 +1,6 @@
 {
   "name": "htmltl",
   "version": "1.0.2",
-  "packageManager": "yarn@3.8.5",
   "license": "MIT",
   "main": "index.js",
   "scripts": {
@@ -17,5 +16,10 @@
     "chai": "^4.3.10",
     "eslint": "^8.52.0",
     "mocha": "^10.2.0"
+  },
+  "packageManager": "yarn@3.8.5",
+  "volta": {
+    "node": "20.18.0",
+    "yarn": "3.8.5"
   }
 }
