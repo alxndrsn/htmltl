@@ -9,6 +9,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    # See: https://github.com/actions/setup-node/issues/480
+    - run: corepack enable
     - uses: actions/checkout@v3
     - name: Use Node.js
       uses: actions/setup-node@v3
