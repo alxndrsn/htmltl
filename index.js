@@ -15,7 +15,7 @@ function html([ head, ...tail ], ...values) {
   const len = tail.length;
   for(let i=0; i<len; ++i) {
     const v = values[i];
-    zipped.push(v instanceof Html ? v : v?.toString().replace(RGX, encoded));
+    zipped.push(...flatten(v));
     zipped.push(tail[i]);
   }
   return new Html(zipped);
@@ -31,4 +31,10 @@ class Html {
     for(let i=0; i<this.content.length; ++i) bob += this.content[i].toString();
     return bob;
   }
+}
+
+function flatten(v) {
+  if(v instanceof Html) return [v];
+  if(Array.isArray(v)) return v.map(flatten);
+  return [ v?.toString().replace(RGX, encoded) ];
 }
