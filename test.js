@@ -45,6 +45,12 @@ describe('html``', () => {
                      '<pre x-example="&amp; this is a &quot;dodgy&quot; &apos;attribute&apos; value">&lt;div&gt;I am a code example&lt;/div&gt;</pre>');
   });
 
+  it('should handle embedded arrays', () => {
+    // expect
+    assert.equal(html`<ul>${['a', 'b', 'c'].map(c => html`<li>${c}</li>`)}</ul>`.toString(),
+                     '<ul><li>a</li><li>b</li><li>c</li></ul>');
+  });
+
   it('should encode README example', () => {
     // given
     const readmeJs = fs.readFileSync('./README.md', { encoding:'utf8' })
