@@ -51,6 +51,24 @@ describe('html``', () => {
                      '<ul><li>a</li><li>b</li><li>c</li></ul>');
   });
 
+  it('should handle embedded arrays with plain content', () => {
+    // expect
+    assert.equal(html`<ul>${['a', 'b', 'c']}</ul>`.toString(),
+                     '<ul>abc</ul>');
+  });
+
+  it('should handle embedded arrays with array content', () => {
+    // expect
+    assert.equal(html`<ul>${[ 'a', 'b', 'c', [ 'd', [ 'e', 'f' ] ] ]}</ul>`.toString(),
+                     '<ul>abcdef</ul>');
+  });
+
+  it('should handle embedded arrays with mixed content', () => {
+    // expect
+    assert.equal(html`<ul>${['a', 'b', 'c'].map(c => [ '\nlist item:', html`<li>${c}</li>`, '-----' ])}</ul>`.toString(),
+                     '<ul>\nlist item:<li>a</li>-----\nlist item:<li>b</li>-----\nlist item:<li>c</li>-----</ul>');
+  });
+
   it('should encode README example', () => {
     // given
     const readmeJs = fs.readFileSync('./README.md', { encoding:'utf8' })
