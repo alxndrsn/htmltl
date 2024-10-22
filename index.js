@@ -28,7 +28,17 @@ class Html {
 
   toString() {
     let bob = '';
-    for(let i=0; i<this.content.length; ++i) bob += this.content[i].toString();
+    for(let i=0; i<this.content.length; ++i) {
+      const c = this.content[i];
+      if(Array.isArray(c)) {
+        bob += c
+            .flat(Number.MAX_SAFE_INTEGER)
+            .map(i => i.toString())
+            .join('');
+      } else {
+        bob += this.content[i].toString();
+      }
+    }
     return bob;
   }
 }
