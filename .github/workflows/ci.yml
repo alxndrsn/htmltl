@@ -17,6 +17,7 @@ jobs:
       with:
         node-version-file: package.json
         cache: 'yarn'
+    - run: yarn --version
     - run: npx corepack prepare "yarn@$(node --print 'require("./package").volta.yarn')"
     - run: yarn --version
     - run: yarn install --immutable
