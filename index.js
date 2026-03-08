@@ -21,6 +21,8 @@ function html([ head, ...tail ], ...values) {
   return new Html(zipped);
 }
 
+html._unsafe = trusted => new Html(trusted);
+
 class Html {
   constructor(content) {
     this.content = content;
