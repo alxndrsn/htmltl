@@ -112,10 +112,10 @@ describe('html``', () => {
 describe('html._unsafe()', () => {
   it('should not double-escape special chars in trusted strings', () => {
     // given
-    const trusted = '<b>I am a sourced externally</b>';
+    const trusted = '<b>I was sourced externally</b>';
 
     // expect
-    assert.equal(html`${html`<i>${html._unsafe(trusted)}</pre>`}`.toString(),
-                     '<i><b>I am a sourced externally</b></i>');
+    assert.equal(html`${html`<i>${html._unsafe(trusted)}</i>`}`.toString(),
+                     '<i><b>I was sourced externally</b></i>');
   });
 });
